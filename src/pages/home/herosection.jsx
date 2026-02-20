@@ -93,7 +93,7 @@ const herosection = () => {
         >
           {/* We wrap "CULINARY" separately to style it or just split it */}
           <span className="inline-block mr-4">{splitText("Magic on a")}</span>
-          <span className="text-yellow-400 inline-block">{splitText("Plate")}</span>
+          <span className="text-yellow-400 inline-block">{splitText("Dinning")}</span>
         </motion.h1>
 
         {/* 2. Slide-up Subtitle with a delay */}
