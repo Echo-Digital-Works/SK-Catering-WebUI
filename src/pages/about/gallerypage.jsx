@@ -9,7 +9,7 @@ const categories = ["All", "Weddings", "Culinary", "Corporate", "Decor"];
 
 const galleryData = [
   // --- WEDDINGS ---
-  { id: 1, type: "image", category: "Weddings", src: "https://images.unsplash.com/photo-1519225469958-1934935f30d9?w=800&q=80", title: "Royal Mandap", size: "tall" },
+  { id: 1, type: "image", category: "Weddings", src: "https://img.freepik.com/free-photo/assortment-indian-dishes-platter_23-2152002848.jpg?semt=ais_hybrid&w=740&q=80", title: "Royal Mandap", size: "tall" },
   { id: 6, type: "image", category: "Weddings", src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80", title: "Bridal Entry", size: "wide" },
   {
     id: 9,

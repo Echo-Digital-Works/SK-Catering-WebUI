@@ -34,201 +34,418 @@ const categoryConfig = [
   { key: "Breakfast", label: { en: "Breakfast", ta: "காலை உணவு" } },
   { key: "Lunch", label: { en: "Lunch", ta: "மதிய உணவு" } },
   { key: "Dinner", label: { en: "Dinner", ta: "இரவு உணவு" } },
-  { key: "Desserts", label: { en: "Sweets", ta: "இனிப்புகள்" } },
+  { key: "Starters", label: { en: "Starters", ta: "துவக்கிகள்" } },
+  { key: "Sweets", label: { en: "Sweets", ta: "இனிப்புகள்" } },
   { key: "Chat counters", label: { en: "Chat Counter", ta: "சாட் உணவுப் பிரிவு" } },
   { key: "Evening Counters", label: { en: "Evening Counters", ta: "மாலை சிற்றுண்டி" } },
   { key: "Welcome Juice", label: { en: "Welcome Juice", ta: "வரவேற்பு பானம்" } },
+  { key: "Desserts", label: { en: "Desserts", ta: "இனிப்பு வகைகள்" } },
+  { key: "Beverages", label: { en: "Beverages", ta: "பானங்கள்" } },
   { key: "Thambulam Bags", label: { en: "Thambulam Bags", ta: "தாம்பூலப் பைகள்" } },
 ];
 
 const menuItems = {
   Breakfast: [
-    { 
-      id: 1, 
-      image: "https://www.indianveggiedelight.com/wp-content/uploads/2021/11/ven-pongal-featured.jpg", 
-      tag: { en: "Bestseller", ta: "பிரபலம்" },
-      name: { en: "Ghee Pongal", ta: "நெய் பொங்கல்" }, 
-      desc: { 
-        en: "Soft rice and lentils cooked in pure cow ghee with cashews and pepper.", 
-        ta: "முந்திரி மற்றும் மிளகு சேர்த்து, தூய பசு நெய்யில் சமைக்கப்பட்ட மென்மையான அரிசி மற்றும் பருப்பு." 
-      }
-    },
-    { 
-      id: 2, 
-      image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&q=80", 
-      tag: { en: "Signature", ta: "சிறப்பு" },
-      name: { en: "Kanjeevaram Idli", ta: "காஞ்சிபுரம் இட்லி" }, 
-      desc: { 
-        en: "Soft, tasty idli made with light spices and cooked in special leaves.", 
-        ta: "மிதமான மசாலாப் பொருட்களுடன், மந்தார இலைகளில் சமைக்கப்பட்ட மென்மையான மற்றும் சுவையான இட்லி." 
-      }
-    },
-    { 
-      id: 3, 
-      image: "https://traditionallymodernfood.com/wp-content/uploads/2022/02/vada-curry-vadakari-4-841x1024.jpeg", 
-      tag: null,
-      name: { en: "Vada Kari", ta: "வடகறி" }, 
-      desc: { 
-        en: "Crispy donut-shaped lentil fritters, served with coconut chutney and sambar.", 
-        ta: "வடை சேர்த்து செய்யப்பட்ட சுவையான கிரேவி. தேங்காய் சட்னி மற்றும் சாம்பாருடன் பரிமாறப்படுகிறது." 
-      }
-    },
-    { 
-      id: 4, 
-      image: "https://images.unsplash.com/photo-1606471191009-63994c53433b?w=600&q=80", 
-      tag: null,
-      name: { en: "Poori Masala", ta: "பூரி மசாலா" }, 
-      desc: { 
-        en: "Fluffy wheat bread served with a spiced potato & onion curry.", 
-        ta: "உருளைக்கிழங்கு மசாலாவுடன் பரிமாறப்படும் பொன்னிறமான பூரி." 
-      }
-    },
-    { 
-      id: 5, 
-      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7yq2Jf6anaGqqmiPRb40T43UjZK7QmMnSQk6FxmFkt63DsI6xCAcrpXhbSIZQTpLidMAMTxPDxPBrjYe_vusMk6NAYu70wa5_Gptd5GGVInAdAA_B0JItCx3McfMy_gC308scozQh49Y/s1600/IMG_20190820_152853.jpg", 
-      tag: null,
-      name: { en: "Kesari", ta: "கேசரி" }, 
-      desc: { 
-        en: "Sweet made with rava, sugar, and ghee. Usually served in functions.", 
-        ta: "ரவை, சர்க்கரை மற்றும் நெய் சேர்த்து செய்யப்பட்ட இனிப்பு. இது விசேஷங்களில் மிகவும் பிரபலம்." 
-      }
-    },
-    { 
-      id: 6, 
-      image: "https://www.awesomecuisine.com/wp-content/uploads/2008/02/idiyappam.jpg", 
-      tag: null,
-      name: { en: "Idiyappam", ta: "இடியாப்பம்" }, 
-      desc: { 
-        en: "Soft string rice noodles served with sweet coconut milk.", 
-        ta: "இனிப்பு தேங்காய் பாலுடன் பரிமாறப்படும் மென்மையான இடியாப்பம்." 
-      }
+  {
+    id: 1,
+    image: "https://hungryforever.net/wp-content/uploads/2015/12/ghee_pongal.jpg",
+    tag: { en: "Bestseller", ta: "பிரபலம்" },
+    name: { en: "Ghee Pongal", ta: "நெய் பொங்கல்" },
+    desc: {
+      en: "Melt-in-mouth pongal drenched in aromatic ghee, roasted cashews, crushed pepper and cumin — pure comfort on a plate.",
+      ta: "நெய் மணம் வீசும், முந்திரி மற்றும் மிளகு சேர்த்து செய்யப்பட்ட நெய் பொங்கல் – நெஞ்சை கவரும் சுவை."
     }
-  ],
+  },
+
+  {
+    id: 2,
+    image: "https://tasteplus.in/wp-content/uploads/2023/05/soft-idly-2.jpg",
+    tag: null,
+    name: { en: "Soft Idly", ta: "மென்மையான இட்லி" },
+    desc: {
+      en: "Cloud-soft steamed idlies served hot with coconut chutney and piping sambar.",
+      ta: "மேகம் போல மென்மையான இட்லி – சட்னி மற்றும் சூடான சாம்பாருடன்."
+    }
+  },
+
+  {
+    id: 3,
+    image: "https://chennaitiffins.com/wp-content/uploads/2022/03/Idly_Sambar.jpg",
+    tag: { en: "Popular", ta: "பிரபலம்" },
+    name: { en: "Sambar Idly", ta: "சாம்பார் இட்லி" },
+    desc: {
+      en: "Fluffy idlies soaked in rich, flavorful sambar topped with ghee and coriander.",
+      ta: "நெய் மணம் கலந்த சாம்பாரில் ஊறிய இட்லி – ருசி மிகுந்த அனுபவம்."
+    }
+  },
+
+  {
+    id: 4,
+    image: "https://culinarydelightsandbeyond.com/wp-content/uploads/2023/03/dosa-5oF7d_hPJG4-scaled.jpg",
+    tag: { en: "Chef Special", ta: "சிறப்பு" },
+    name: { en: "Masala Dosa", ta: "மசால் தோசை" },
+    desc: {
+      en: "Golden crispy dosa filled with spicy potato masala, served with chutneys and hot sambar.",
+      ta: "மொறுமொறுப்பான தோசையில் கார உருளைக்கிழங்கு மசாலா – சுவை வெடிப்பு."
+    }
+  },
+
+  {
+    id: 5,
+    image: "https://traditionallymodernfood.com/wp-content/uploads/2022/06/kerala-appam-palappam-3-scaled.jpeg",
+    tag: null,
+    name: { en: "Appam", ta: "அப்பம்" },
+    desc: {
+      en: "Soft-centered, lace-edged appam perfectly paired with coconut milk or curry.",
+      ta: "மென்மையான நடுப்பகுதி மற்றும் மொறு விளிம்புடன் சுவையான அப்பம்."
+    }
+  },
+
+  {
+    id: 6,
+    image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/05/sambar-recipe.jpg",
+    tag: null,
+    name: { en: "Traditional Sambar", ta: "சாம்பார்" },
+    desc: {
+      en: "Rich lentil-based sambar slow-cooked with vegetables and aromatic spices.",
+      ta: "காய்கறி மற்றும் மசாலா சேர்த்து சமைத்த பாரம்பரிய சாம்பார்."
+    }
+  },
+
+  {
+    id: 7,
+    image: "https://vanitascorner.com/wp-content/uploads/2023/03/OPU-2-1024x768.jpg",
+    tag: null,
+    name: { en: "Uthappam", ta: "உத்தப்பம்" },
+    desc: {
+      en: "Thick, soft dosa topped with onions, tomatoes and chillies — fluffy and flavorful.",
+      ta: "வெங்காயம் மற்றும் தக்காளி சேர்த்து செய்யப்பட்ட மென்மையான உத்தப்பம்."
+    }
+  },
+
+  {
+    id: 8,
+    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghwoa9XFZzokQEngS1eGo1T-OQohF2uZYQa_q_3vorbpe8ojVdiOJz1-Z9UU_NnILBqz3nxzraVKgUmCzlQU2uS8V7qnR-Twbxv0NM_bJaV-V-KB0XF4RpbRwZKG95LqgP6u8P8jCb_MU/s1600/2889.jpg",
+    tag: null,
+    name: { en: "Podi Idly", ta: "பொடி இட்லி" },
+    desc: {
+      en: "Mini idlies tossed in spicy podi and ghee — addictive and aromatic.",
+      ta: "மிளகாய் பொடி மற்றும் நெய் சேர்த்து கலக்கிய சுவையான பொடி இட்லி."
+    }
+  },
+
+  {
+    id: 9,
+    image: "https://passion2cook.com/wp-content/uploads/2022/10/medu-vada-1-1024x576.jpg",
+    tag: { en: "Hot Favorite", ta: "பிரபலம்" },
+    name: { en: "Medhu Vada", ta: "மேது வடை" },
+    desc: {
+      en: "Crispy golden vada with a soft center — best enjoyed with chutney and sambar.",
+      ta: "வெளியில் மொறு, உள்ளே மென்மை – சட்னி சாம்பாருடன் சிறந்த வடை."
+    }
+  },
+
+  {
+    id: 10,
+    image: "http://3.bp.blogspot.com/_0CWdGn9Gu5c/TDmnJmspJFI/AAAAAAAAEQo/mvrsuuCiwdY/s1600/poori+last+last.jpg",
+    tag: null,
+    name: { en: "Poori Masala", ta: "பூரி மசாலா" },
+    desc: {
+      en: "Puffy golden pooris served with rich potato masala — a classic favorite.",
+      ta: "பொன்னிற பூரி மற்றும் சுவையான உருளைக்கிழங்கு மசாலா."
+    }
+  },
+
+  {
+    id: 11,
+    image: "https://hungryforever.net/wp-content/uploads/2015/04/Featured-image-10-Vada-Curry-Recipe-600x315.jpg",
+    tag: { en: "Special", ta: "சிறப்பு" },
+    name: { en: "Vada Curry", ta: "வட கறி" },
+    desc: {
+      en: "Spicy, flavorful curry made with crumbled vadas — perfect combo with dosa or idly.",
+      ta: "வடை சேர்த்து செய்யப்பட்ட காரமான கிரேவி – தோசைக்கு சிறந்த துணை."
+    }
+  }
+],
   Lunch: [
-    { 
-      id: 7, 
-      image: "https://tse1.mm.bing.net/th/id/OIP.YG95IXw215wyaqfX0Mik7QHaEK?pid=Api&P=0&h=180", 
-      tag: null,
-      name: { en: "Rice", ta: "சாதம்" }, 
-      desc: { 
-        en: "Soft cooked grains that serve as the main food in most meals.", 
-        ta: "கறி, குழம்பு அல்லது சாம்பாருடன் சாப்பிடக்கூடிய மென்மையான சாதம்." 
-      }
-    },
-    { 
-      id: 8, 
-      image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/05/sambar.jpg", 
-      tag: null,
-      name: { en: "Sambar", ta: "சாம்பார்" }, 
-      desc: { 
-        en: "A mixed vegetable dal curry. It is healthy and very tasty.", 
-        ta: "காய்கறிகள் மற்றும் பருப்பு சேர்த்து செய்யப்பட்ட ஆரோக்கியமான மற்றும் சுவையான குழம்பு." 
-      }
-    },
-    { 
-      id: 9, 
-      image: "https://www.padhuskitchen.com/wp-content/uploads/2018/03/vendakkaipulikulambu.jpg", 
-      tag: null,
-      name: { en: "Puli Kulambu", ta: "புளிக்குழம்பு" }, 
-      desc: { 
-        en: "A tangy tamarind curry served with rice.", 
-        ta: "புளி மற்றும் மசாலா சேர்த்து செய்யப்பட்ட காரமான மற்றும் சுவையான குழம்பு." 
-      }
-    },
-    { 
-      id: 10, 
-      image: "https://paattiskitchen.com/wp-content/uploads/2022/11/kmc_20221106_190919-1200x675.jpg", 
-      tag: null,
-      name: { en: "Poriyal", ta: "பொரியல்" }, 
-      desc: { 
-        en: "Lightly fried vegetables cooked with coconut and mild spices.", 
-        ta: "தேங்காய் மற்றும் மிதமான மசாலா சேர்த்து வதக்கிய காய்கறிகள்." 
-      }
-    },
-    { 
-      id: 11, 
-      image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2018/11/rasam-recipe.jpg", 
-      tag: null,
-      name: { en: "Rasam", ta: "ரசம்" }, 
-      desc: { 
-        en: "A thin, spicy, and sour soup made with tamarind and pepper.", 
-        ta: "புளி, மிளகு மற்றும் சீரகம் சேர்த்து செய்யப்பட்ட ஜீரணத்தை தூண்டும் சூப்." 
-      }
-    },
-    { 
-      id: 12, 
-      image: "http://cravecookclick.com/wp-content/uploads/2014/09/IMG_9229-2.jpg", 
-      tag: null,
-      name: { en: "Paruppu Payasam", ta: "பருப்பு பாயசம்" }, 
-      desc: { 
-        en: "A sweet made with dal, jaggery, and coconut.", 
-        ta: "பருப்பு, வெல்லம் மற்றும் தேங்காய் பால் சேர்த்து செய்யப்பட்ட பாரம்பரிய இனிப்பு." 
-      }
+  {
+    id: 7,
+    image: "https://png.pngtree.com/thumb_back/fh260/background/20230426/pngtree-an-image-of-white-rice-in-the-bowl-with-steam-coming-image_2549918.jpg",
+    tag: { en: "Main Course", ta: "முக்கியம்" },
+    name: { en: "Rice", ta: "வெள்ளை சாதம்" },
+    desc: {
+      en: "Fluffy, perfectly steamed premium rice — the heart of every traditional South Indian meal.",
+      ta: "மென்மையாக வேகவைத்த வெள்ளை சாதம் – ஒவ்வொரு சாப்பாட்டின் இதயம்."
     }
-  ],
+  },
+
+  {
+    id: 8,
+    image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/05/sambar-recipe.jpg",
+    tag: { en: "Traditional", ta: "பாரம்பரியம்" },
+    name: { en: "Sambar", ta: "சாம்பார்" },
+    desc: {
+      en: "Aromatic lentil curry simmered with farm-fresh vegetables and authentic spices.",
+      ta: "புதிய காய்கறி மற்றும் மசாலா சேர்த்து சமைத்த பாரம்பரிய சாம்பார்."
+    }
+  },
+
+  {
+    id: 9,
+    image: "https://images.herzindagi.info/image/2023/Jan/kulambu_recipe_tamil.jpg",
+    tag: null,
+    name: { en: "Vatha Kulambu", ta: "வத்தக்குழம்பு" },
+    desc: {
+      en: "Rich, tangy tamarind gravy slow-cooked with sun-dried vegetables and spices.",
+      ta: "புளி மற்றும் வத்தல் சேர்த்து சமைத்த காரமான சுவை மிகுந்த குழம்பு."
+    }
+  },
+
+  {
+    id: 10,
+    image: "https://i.ytimg.com/vi/1Pzu7TttnBQ/maxresdefault.jpg",
+    tag: null,
+    name: { en: "More Kulambu", ta: "மோர் குழம்பு" },
+    desc: {
+      en: "Creamy yogurt-based curry delicately spiced and perfectly balanced.",
+      ta: "தயிர் அடிப்படையிலான மென்மையான மற்றும் சுவையான மோர் குழம்பு."
+    }
+  },
+
+  {
+    id: 11,
+    image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2018/11/rasam-recipe.jpg",
+    tag: { en: "Digestive", ta: "ஜீரணத்திற்கு" },
+    name: { en: "Rasam", ta: "ரசம்" },
+    desc: {
+      en: "Pepper-infused, tangy rasam that awakens your taste buds and aids digestion.",
+      ta: "மிளகு மற்றும் புளி சேர்த்து செய்யப்பட்ட ஜீரணத்திற்கு உதவும் ரசம்."
+    }
+  },
+
+  {
+    id: 12,
+    image: "https://5.imimg.com/data5/ANDROID/Default/2022/8/SS/BY/QK/63020576/product-jpeg-500x500.jpg",
+    tag: null,
+    name: { en: "Appalam", ta: "அப்பளம்" },
+    desc: {
+      en: "Crispy golden papad that adds the perfect crunch to every bite.",
+      ta: "மொறுமொறுப்பான அப்பளம் – சாப்பாட்டிற்கு சிறந்த துணை."
+    }
+  },
+
+  {
+    id: 13,
+    image: "https://athithigruhafoods.in/cdn/shop/files/Magaya-Pickle.jpg?v=1716880404",
+    tag: null,
+    name: { en: "Traditional Pickles", ta: "ஊறுகாய்" },
+    desc: {
+      en: "Spicy homemade pickles bursting with authentic South Indian flavors.",
+      ta: "காரமான மற்றும் சுவை மிகுந்த பாரம்பரிய ஊறுகாய்."
+    }
+  },
+
+  {
+    id: 14,
+    image: "https://img.freepik.com/premium-photo/banana-bonanza-tempting-fresh-bananas-showcased-light-background_1000124-117396.jpg?w=1060",
+    tag: null,
+    name: { en: "Banana", ta: "வாழைப்பழம்" },
+    desc: {
+      en: "Naturally sweet fresh banana served to complete your traditional meal.",
+      ta: "சாப்பாட்டை நிறைவு செய்ய இனிப்பான வாழைப்பழம்."
+    }
+  },
+
+  {
+    id: 15,
+    image: "https://images.hindustantimes.com/img/2022/12/06/550x309/dahi_1654357494111_1670328535117_1670328535117.jpg",
+    tag: { en: "Cooling", ta: "குளிர்ச்சி" },
+    name: { en: "Curd", ta: "தயிர்" },
+    desc: {
+      en: "Thick, farm-fresh curd to balance and cool the meal.",
+      ta: "மென்மையான மற்றும் குளிர்ச்சியான தயிர்."
+    }
+  },
+
+  {
+    id: 16,
+    image: "https://4.bp.blogspot.com/-tdzAdZ3vsYk/T499KflCNdI/AAAAAAAAANc/wYRcpuMQ4Bs/s1600/DSCN0190.JPG",
+    tag: { en: "After Meal", ta: "சாப்பாட்டுக்கு பின்" },
+    name: { en: "Beeda", ta: "பீடா" },
+    desc: {
+      en: "Sweet paan beeda served as a refreshing mouth freshener after meals.",
+      ta: "சாப்பாட்டுக்கு பின் பரிமாறப்படும் இனிப்பான பீடா."
+    }
+  }
+],
   Dinner: [
-    { 
-      id: 13, 
-      image: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&q=80", 
-      tag: null,
-      name: { en: "Kal Dosa", ta: "கல் தோசை" }, 
-      desc: { 
-        en: "Thick, soft dosa cooked on a hot stone. Crispy outside, soft inside.", 
-        ta: "சூடான கல்லில் சுடப்பட்ட, வெளிப்புறம் மொறுமொறுப்பாகவும் உள்ளே மென்மையாகவும் இருக்கும் தோசை." 
-      }
-    },
-    { 
-      id: 14, 
-      image: "https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/cf/74/3f/parotta-salna-with-chutney.jpg", 
-      tag: { en: "Classic", ta: "கிளாசிக்" },
-      name: { en: "Parotta Salna", ta: "பரோட்டா சால்னா" }, 
-      desc: { 
-        en: "Flaky layered flatbread served with a rich, empty salna gravy.", 
-        ta: "அடுக்கு பரோட்டா மற்றும் சுவையான சால்னா கிரேவி." 
-      }
-    },
-    { 
-      id: 15, 
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpKRs9S5Lc1XUFjgwbg7QuZxtZ0ox4zlujg&s", 
-      tag: { en: "Light", ta: "லேசான உணவு" },
-      name: { en: "Idiyappam", ta: "இடியாப்பம்" }, 
-      desc: { 
-        en: "Steamed rice string hoppers with a mild coconut milk vegetable stew.", 
-        ta: "ஆவியில் வேகவைத்த இடியாப்பம் மற்றும் தேங்காய் பால் குருமா." 
-      }
-    },
-    { 
-      id: 16, 
-      image: "https://tse3.mm.bing.net/th/id/OIP.dVhsa6_d0Sw1QnmqdZBvQgHaEK?pid=Api&P=0&h=180", 
-      tag: { en: "Spicy", ta: "காரம்" },
-      name: { en: "Kothu Parotta", ta: "கொத்து பரோட்டா" }, 
-      desc: { 
-        en: "Chopped parotta fried with eggs/vegetables and spices.", 
-        ta: "முட்டை, காய்கறிகள் மற்றும் மசாலா சேர்த்து கொத்தி போடப்பட்ட பரோட்டா." 
-      }
-    },
-    { 
-      id: 17, 
-      image: "https://vismaifood.com/storage/app/uploads/public/45a/29b/a17/thumb__700_0_0_0_auto.jpg", 
-      tag: { en: "Light", ta: "லேசான உணவு" },
-      name: { en: "Masala Dosa", ta: "மசால் தோசை" }, 
-      desc: { 
-        en: "Crispy dosa stuffed with spiced potato masala.", 
-        ta: "உருளைக்கிழங்கு மசாலா உள்ளீடாக வைக்கப்பட்ட மொறுமொறுப்பான தோசை." 
-      }
-    },
-    { 
-      id: 18, 
-      image: "https://www.krumpli.co.uk/wp-content/uploads/2023/05/Homemade-Indian-Chapati-02-1200x1200.jpg", 
-      tag: { en: "Light", ta: "லேசான உணவு" },
-      name: { en: "Chapati", ta: "சப்பாத்தி" }, 
-      desc: { 
-        en: "Soft wheat bread served with side dishes.", 
-        ta: "சைட் டிஷ் உடன் சாப்பிடக்கூடிய மென்மையான கோதுமை சப்பாத்தி." 
-      }
-    },
-  ],
-  Desserts: [
+  {
+    id: 13,
+    image: "https://www.indianveggiedelight.com/wp-content/uploads/2019/09/mushroom-biryani-featured.jpg",
+    tag: { en: "Bestseller", ta: "பிரபலம்" },
+    name: { en: "Veg Mushroom Biriyani", ta: "காய்கறி மஷ்ரூம் பிரியாணி" },
+    desc: {
+      en: "Fragrant basmati rice layered with spicy mushrooms and aromatic biryani masala — rich, flavorful and irresistible.",
+      ta: "மசாலா மணம் வீசும் பாஸ்மதி அரிசியில் மஷ்ரூம் சேர்த்து செய்யப்பட்ட சுவையான பிரியாணி."
+    }
+  },
+
+  {
+    id: 14,
+    image: "https://i.ytimg.com/vi/yj4F_4KUwCQ/hqdefault.jpg",
+    tag: { en: "Special", ta: "சிறப்பு" },
+    name: { en: "Bismillah Bath", ta: "பிஸ்மில்லா பாத்" },
+    desc: {
+      en: "Aromatic ghee rice infused with whole spices and served hot with flavorful side gravy.",
+      ta: "நெய் மற்றும் மசாலா சேர்த்து செய்யப்பட்ட மணம் மிக்க பிஸ்மில்லா பாத்."
+    }
+  },
+
+  {
+    id: 15,
+    image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2020/12/rasam-recipe-swasthis-1.jpg",
+    tag: { en: "Comfort", ta: "அமைதி உணவு" },
+    name: { en: "Rasam Bath", ta: "ரசம் சாதம்" },
+    desc: {
+      en: "Hot steamed rice mixed with peppery rasam — light, comforting and satisfying.",
+      ta: "மிளகு மணம் கலந்த ரசம் சேர்த்து செய்யப்பட்ட சூடான சாதம்."
+    }
+  },
+
+  {
+    id: 16,
+    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiZh4RruUTfK6GdjHshXbDhdBjSCNjzDADxs-CNQleQrOCRr8Nm17fWiKynVx9vxWDskpgHUUC2VR3LX12pUG3Fko36mzq9nmNrJtW9X_kCBKREwdIxKhqFt46ZG6F5FopBA1gvdYxgZCF/w1200-h630-p-k-no-nu/IMG_6662_Fotor.jpg",
+    tag: null,
+    name: { en: "Pomo Bagala Bath", ta: "போமோ பகலா பாத்" },
+    desc: {
+      en: "Flavor-packed seasoned rice blended with traditional spices and herbs.",
+      ta: "மசாலா மற்றும் கறிவேப்பிலை சேர்த்து செய்யப்பட்ட சுவையான பாத்."
+    }
+  },
+
+  {
+    id: 17,
+    image: "https://img.freepik.com/premium-photo/tempting-veg-biryani-veg-pulav-fried-rice-indian-culinary-delights-aigenerated_978137-866.jpg?w=2000",
+    tag: { en: "Popular", ta: "பிரபலம்" },
+    name: { en: "Veg Fried Rice", ta: "காய்கறி ஃப்ரைட் ரைஸ்" },
+    desc: {
+      en: "Indo-Chinese style fried rice tossed with fresh vegetables and sauces.",
+      ta: "காய்கறி மற்றும் சாஸ் சேர்த்து வதக்கிய சுவையான ஃப்ரைட் ரைஸ்."
+    }
+  },
+
+  {
+    id: 18,
+    image: "https://1.bp.blogspot.com/--CvPtk7mazI/V5Eyj_XMkII/AAAAAAAAAtE/Bl6pRVFsYrAYHqDJjY_Y2YtM7NcJw_huwCLcB/s1600/Chili%2Bparotta.JPG",
+    tag: { en: "Spicy", ta: "காரம்" },
+    name: { en: "Chilly Parotta", ta: "சில்லி பரோட்டா" },
+    desc: {
+      en: "Chopped parotta stir-fried with spicy sauces, onions and capsicum — bold and fiery.",
+      ta: "பரோட்டா துண்டுகளை மசாலா மற்றும் சாஸ் சேர்த்து வதக்கிய கார சில்லி பரோட்டா."
+    }
+  },
+
+  {
+    id: 19,
+    image: "https://parcelkaro.in/wp-content/uploads/2023/01/Hakka-Noodles.jpg",
+    tag: { en: "Kids Favorite", ta: "குழந்தைகள் விருப்பு" },
+    name: { en: "Veg Noodles", ta: "காய்கறி நூடுல்ஸ்" },
+    desc: {
+      en: "Stir-fried soft noodles tossed with crunchy vegetables and savory sauces.",
+      ta: "காய்கறி மற்றும் சாஸ் சேர்த்து வதக்கிய மென்மையான நூடுல்ஸ்."
+    }
+  }
+],
+Starters: [
+  {
+    id: 601,
+    image: "https://www.boldsky.com/img/1200x60x675/2021/07/img-20210728-wa0016-1627476057.jpg",
+    tag: { en: "Bestseller", ta: "பிரபலம்" },
+    name: { en: "Gobi 65", ta: "கோபி 65" },
+    desc: {
+      en: "Crispy deep-fried cauliflower tossed in spicy 65 masala — crunchy, fiery and addictive.",
+      ta: "மசாலா சேர்த்து பொரித்த மொறுமொறுப்பான கோபி 65 – கார சுவை வெடிப்பு."
+    }
+  },
+
+  {
+    id: 602,
+    image: "https://img.freepik.com/premium-photo/malai-chicken-tikka-murgh-malai-is-mouthwatering-juicy-grilled-chicken-recipe_1174497-39560.jpg?w=2000",
+    tag: { en: "Creamy", ta: "கிரீமி" },
+    name: { en: "Malai Tikka", ta: "மலை டிக்கா" },
+    desc: {
+      en: "Soft paneer cubes marinated in creamy malai and grilled to perfection.",
+      ta: "கிரீமி மசாலாவில் ஊறவைத்து சுட்ட மென்மையான பனீர் டிக்கா."
+    }
+  },
+
+  {
+    id: 603,
+    image: "https://vegecravings.com/wp-content/uploads/2016/09/spring-roll-recipe-step-by-step-instructions.jpg",
+    tag: null,
+    name: { en: "Veg Roll", ta: "வெஜ் ரோல்" },
+    desc: {
+      en: "Crispy rolls stuffed with spiced vegetables — golden and satisfying.",
+      ta: "காய்கறி பூரணத்துடன் மொறுமொறுப்பான வெஜ் ரோல்."
+    }
+  },
+
+  {
+    id: 604,
+    image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/06/paneer-65-recipe.jpg",
+    tag: { en: "Popular", ta: "பிரபலம்" },
+    name: { en: "Paneer 65", ta: "பனீர் 65" },
+    desc: {
+      en: "Crispy fried paneer cubes coated in bold South Indian spices.",
+      ta: "மசாலா பூசி பொரித்த சுவையான பனீர் 65."
+    }
+  },
+
+  {
+    id: 605,
+    image: "https://www.theflourishingabode.com/wp-content/uploads/2025/03/Creamy-mushroom-masala-in-a-rich-brown-curry-with-fresh-coriander-garnish-4508277-1024x771.png ",
+    tag: null,
+    name: { en: "Mushroom Masala", ta: "மஷ்ரூம் மசாலா" },
+    desc: {
+      en: "Juicy mushrooms sautéed in rich, spicy masala gravy.",
+      ta: "மசாலா கிரேவியில் சமைத்த சுவையான மஷ்ரூம்."
+    }
+  },
+
+  {
+    id: 606,
+    image: "https://img.freepik.com/premium-photo/tempting-butter-podi-masala-dosa-south-indian-food-masala-dosa-picture-photography_1020697-133074.jpg?w=2000",
+    tag: null,
+    name: { en: "PB Masala", ta: "பி.பி மசாலா" },
+    desc: {
+      en: "Spicy and flavorful masala dish tossed with crunchy vegetables.",
+      ta: "மசாலா மற்றும் காய்கறி சேர்த்து செய்யப்பட்ட சுவையான ஸ்டார்டர்."
+    }
+  },
+
+  {
+    id: 607,
+    image: "https://img.freepik.com/premium-photo/tempting-closeup-four-easy-cheese-balls-soft-light-daytime-kitchen_1287624-12463.jpg",
+    tag: { en: "Kids Favorite", ta: "குழந்தைகள் விருப்பு" },
+    name: { en: "Cheese Ball", ta: "சீஸ் பால்" },
+    desc: {
+      en: "Golden crispy balls filled with melted cheese — gooey and delicious.",
+      ta: "உள்ளே உருகும் சீஸ் நிரம்பிய மொறுமொறுப்பான சீஸ் பால்."
+    }
+  },
+
+  {
+    id: 608,
+    image: "https://i.ytimg.com/vi/5TpMaql05fM/maxresdefault.jpg",
+    tag: null,
+    name: { en: "Mur Mur Pakorey", ta: "முர்முர் பகோடா" },
+    desc: {
+      en: "Crunchy pakoras fried to golden perfection — the perfect tea-time snack.",
+      ta: "பொன்னிறமாக பொரித்த மொறுமொறுப்பான பகோடா."
+    }
+  }
+],
+  Sweets: [
   {
     id: 23,
     image: "https://m.media-amazon.com/images/I/618qkOUvliL._AC_UF350,350_QL80_.jpg",
@@ -341,7 +558,7 @@ const menuItems = {
   },
   {
     id: 34,
-    image: "https://i0.wp.com/www.sharmiskitchen.com/wp-content/uploads/2017/08/Paal-Kozhukattai.jpg?fit=1199%2C1799&ssl=1",
+    image: "https://i.ytimg.com/vi/HA7ysQ8oFPQ/hqdefault.jpg",
     tag: { en: "Traditional", ta: "பாரம்பரியம்" },
     name: { en: "Pal Kozhukatta", ta: "பால் கொழுக்கட்டை" },
     desc: {
@@ -351,7 +568,7 @@ const menuItems = {
   },
   {
     id: 35,
-    image: "https://cdn2.foodviva.com/static-content/food-images/dessert-recipes/paruppu-payasam-recipe/paruppu-payasam-recipe.jpg",
+    image: "http://cravecookclick.com/wp-content/uploads/2014/09/IMG_9229-2.jpg",
     tag: null,
     name: { en: "Parupu Payasam", ta: "பருப்பு பாயசம்" },
     desc: {
@@ -557,7 +774,7 @@ const menuItems = {
   "Welcome Juice": [
   {
     id: 401,
-    image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500",
+    image: "https://southindianfoods.in/gallery/jigarthanda-step-by-step-photos/jigathanda.jpg",
     tag: { en: "Signature", ta: "சிறப்பு" },
     name: { en: "Madurai Special Jigarthanda", ta: "மதுரை ஜிகர்தண்டா" },
     desc: {
@@ -635,6 +852,130 @@ const menuItems = {
     desc: {
       en: "Rich and healthy milk shake blended with premium almonds.",
       ta: "பாதாம் பருப்பு மற்றும் குங்குமப்பூ சேர்த்த சத்தான பானம்."
+    }
+  }
+],
+Desserts: [
+  {
+    id: 701,
+    image: "https://b.zmtcdn.com/data/pictures/0/19631940/22458608e8527f1292e9f2194a7d2dc1.jpg",
+    tag: { en: "Traditional", ta: "பாரம்பரியம்" },
+    name: { en: "Abu Katta", ta: "அபு கட்டா" },
+    desc: {
+      en: "Rich, melt-in-mouth traditional sweet crafted with premium nuts and ghee — pure indulgence.",
+      ta: "நெய் மற்றும் நட்ஸ் சேர்த்து செய்யப்பட்ட மென்மையான பாரம்பரிய இனிப்பு."
+    }
+  },
+
+  {
+    id: 702,
+    image: "https://www.ambafoods.co.in/images/thumbs/0001201_kaju-pista-roll.jpeg",
+    tag: { en: "Premium", ta: "பிரீமியம்" },
+    name: { en: "Gold Pista Roll", ta: "கோல்ட் பிஸ்தா ரோல்" },
+    desc: {
+      en: "Luxury pista roll layered with rich dry fruits and edible gold finish.",
+      ta: "பிஸ்தா மற்றும் நட்ஸ் சேர்த்து தங்க அலங்காரத்துடன் செய்யப்பட்ட இனிப்பு."
+    }
+  },
+
+  {
+    id: 703,
+    image: "https://www.theroastedroot.net/wp-content/uploads/2023/06/dairy-free-vanilla-ice-cream-8.jpg",
+    tag: { en: "Classic", ta: "கிளாசிக்" },
+    name: { en: "Vanilla Ice Cream", ta: "வெண்ணிலா ஐஸ்கிரீம்" },
+    desc: {
+      en: "Smooth and creamy vanilla ice cream — simple, classic and irresistible.",
+      ta: "மென்மையான மற்றும் குளிர்ச்சியான வெண்ணிலா ஐஸ்கிரீம்."
+    }
+  },
+
+  {
+    id: 704,
+    image: "https://tiimg.tistatic.com/fp/1/007/612/cream-color-healthy-and-delicious-butterscotch-ice-cream-for-all-age-groups-008.jpg",
+    tag: null,
+    name: { en: "Butter Scotch", ta: "பட்டர் ஸ்காட்ச்" },
+    desc: {
+      en: "Creamy ice cream loaded with crunchy caramel bits and butterscotch flavor.",
+      ta: "கரமேல் துகள்கள் சேர்த்து செய்யப்பட்ட சுவையான பட்டர் ஸ்காட்ச் ஐஸ்கிரீம்."
+    }
+  },
+
+  {
+    id: 705,
+    image: "https://images.squarespace-cdn.com/content/v1/5fbea16a085bf90c0eef03a5/aac62708-4bae-472a-bdb1-67ceb2af925a/Casatta_Paola_IAFM_3.jpg",
+    tag: { en: "Kids Favorite", ta: "குழந்தைகள் விருப்பு" },
+    name: { en: "Cassatta", ta: "கசட்டா" },
+    desc: {
+      en: "Colorful layered ice cream with nuts and fruity flavors — festive and fun.",
+      ta: "பல்வேறு நிறங்களும் சுவைகளும் கொண்ட கசட்டா ஐஸ்கிரீம்."
+    }
+  },
+
+  {
+    id: 706,
+    image: "https://preview.redd.it/i-ate-baklava-with-turkish-ice-cream-v0-nopyj2waxafa1.jpg?auto=webp&s=ca9bcbe4620317c68984496a847d004254152866",
+    tag: { en: "Special", ta: "சிறப்பு" },
+    name: { en: "Turkish Ice Cream", ta: "துருக்கி ஐஸ்கிரீம்" },
+    desc: {
+      en: "Stretchy, creamy Turkish delight-style ice cream with a unique texture.",
+      ta: "நீளமாக இழுக்கும் தன்மை கொண்ட குளிர்ச்சியான துருக்கி ஐஸ்கிரீம்."
+    }
+  },
+
+  {
+    id: 707,
+    image: "https://i0.wp.com/tipandacooks.com/wp-content/uploads/2022/08/Kulfi-Malai-1.jpg?fit=1000%2C667&ssl=1",
+    tag: { en: "Royal", ta: "ராயல்" },
+    name: { en: "Malai Kulfi Roll", ta: "மலை குல்ஃபி ரோல்" },
+    desc: {
+      en: "Dense, creamy malai kulfi rolled and garnished with pista and saffron.",
+      ta: "பிஸ்தா மற்றும் குங்குமப்பூ அலங்காரத்துடன் செய்யப்பட்ட மலை குல்ஃபி."
+    }
+  }
+],
+
+Beverages: [
+  {
+    id: 801,
+    image: "https://img.freepik.com/premium-photo/herbal-infusion-tea-with-chamomile-lavender-mint_1034924-8526.jpg",
+    tag: { en: "Classic", ta: "கிளாசிக்" },
+    name: { en: "Tea", ta: "டீ" },
+    desc: {
+      en: "Freshly brewed aromatic tea with rich milk and perfect sweetness — the ultimate comfort sip.",
+      ta: "மணம் வீசும் பால் டீ – ஒவ்வொரு குடிப்பிலும் புத்துணர்ச்சி தரும்."
+    }
+  },
+
+  {
+    id: 802,
+    image: "https://hillmark.in/wp-content/uploads/2021/05/southindian-filter-coffee.jpg",
+    tag: { en: "Traditional", ta: "பாரம்பரியம்" },
+    name: { en: "Filter Coffee", ta: "பில்டர் காபி" },
+    desc: {
+      en: "Authentic South Indian filter coffee with strong decoction and frothy milk — bold and energizing.",
+      ta: "தீவிர டிக்ஷன் மற்றும் நுரையுடன் கூடிய பாரம்பரிய பில்டர் காபி."
+    }
+  },
+
+  {
+    id: 803,
+    image: "https://cdn2.bigcommerce.com/server2300/b2c33/product_images/uploaded_images/1mytrini.png",
+    tag: { en: "Special", ta: "சிறப்பு" },
+    name: { en: "Hot Badam Milk", ta: "சூடான பாதாம் பால்" },
+    desc: {
+      en: "Warm saffron-infused almond milk enriched with crushed badam — soothing and nourishing.",
+      ta: "பாதாம் மற்றும் குங்குமப்பூ சேர்த்து செய்யப்பட்ட சத்தான சூடான பால்."
+    }
+  },
+
+  {
+    id: 804,
+    image: "https://i.pinimg.com/originals/95/db/43/95db4301498dde3702c348317426a130.jpg",
+    tag: { en: "Refreshing", ta: "புத்துணர்ச்சி" },
+    name: { en: "Rose Milk", ta: "ரோஸ் மில்க்" },
+    desc: {
+      en: "Chilled milk blended with fragrant rose syrup — sweet, cooling and delightful.",
+      ta: "ரோஸ் சர்பத் சேர்த்து செய்யப்பட்ட குளிர்ச்சியான ரோஸ் மில்க்."
     }
   }
 ],
