@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 // --- DATA ---
 const footerLinks = {
   quickLinks: [
-    { name: "Our Story", href: "/about" },
-    { name: "Menus", href: "/menu" },
-    { name: "Services", href: "/services" },
-    { name: "Gallery", href: "/gallery" }
+    { name: "Our Story", path: "/about" },
+    { name: "Menus", path: "/menu" },
+    { name: "Services", path: "/services" },
+    { name: "Gallery", path: "/gallery" }
   ],
   customerService: [
-    { name: "Contact Us", href: "#" },
+    { name: "Contact Us", path: "/contact" },
     { name: "FAQ", href: "#" },
     { name: "Booking Policy", href: "#" },
     { name: "Event Planning", href: "#" }
@@ -111,7 +111,7 @@ const Footer = () => {
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.name}>
                   <motion.a 
-                    href={link.href}
+                    href={link.path}
                     className="text-zinc-500 text-sm hover:text-amber-500 transition-colors flex items-center gap-2 group"
                     whileHover={{ x: 5 }}
                   >

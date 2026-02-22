@@ -109,39 +109,61 @@ const Navbar = () => {
               />
 
               {/* 2. TOP LOGO (Spins Left-to-Right / Y-Axis) */}
-              <motion.img
-                src={logo}
-                alt="SK Caterings Logo"
-                className="relative z-10 w-24 h-24 md:w-28 md:h-28 object-contain"
-                animate={{
-                  rotateY: [0, 90, 0],
-                  filter: [
-                    "drop-shadow(0 0 2px rgba(251,191,36,0.3))", // Dim state (Reduced from 6px/0.5)
-                    "drop-shadow(0 0 8px rgba(251,191,36,0.8))", // Bright state (Reduced from 18px/0.9)
-                  ]
-                }}
-                transition={{
-                  rotateY: {
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "linear"
-                  },
-                  filter: {
-                    duration: 0.5,         // Faster duration creates the "blink" speed
-                    repeat: Infinity,
-                    repeatType: "reverse", // Reverses back and forth (0 -> 1 -> 0)
-                    ease: "easeInOut"
-                  }
-                }}
-                style={{
-                  backfaceVisibility: "visible",
-                  translateY: -6
-                }}
-                whileHover={{
-                  scale: 1.1,
-                  filter: "drop-shadow(0 0 15px rgba(251,191,36,0.8))" // Slightly reduced hover glow too
-                }}
-              />
+              <div className="relative flex items-center justify-center">
+
+  {/* LOGO */}
+  <motion.img
+    src={logo}
+    alt="SK Caterings Logo"
+    className="relative z-10 w-24 h-24 md:w-28 md:h-28 object-contain"
+    animate={{ rotateY: [0, 90, 0] }}
+    transition={{
+      rotateY: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "linear",
+      },
+    }}
+    style={{
+      backfaceVisibility: "visible",
+      translateY: -6,
+    }}
+    whileHover={{ scale: 1.1 }}
+  />
+
+  {/* ⭐ STAR SPARKLES */}
+  {[...Array(6)].map((_, i) => (
+    <motion.div
+      key={i}
+      className="absolute"
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{
+        opacity: [0, 1, 0],
+        scale: [0, 1.3, 0],
+        rotate: [0, 180, 360],
+        x: [0, (Math.random() - 0.5) * 90],
+        y: [0, (Math.random() - 0.5) * 90],
+      }}
+      transition={{
+        duration: 2,
+        delay: i * 0.35,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    >
+      {/* STAR SVG */}
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="#FACC15"
+      >
+        <path d="M12 2l2.2 6.8H21l-5.4 3.9L17.8 21 12 16.9 6.2 21l2.2-8.3L3 8.8h6.8z" />
+      </svg>
+    </motion.div>
+  ))}
+
+</div>
 
             </div>
           </Link>

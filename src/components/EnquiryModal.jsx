@@ -59,7 +59,7 @@ Event: ${formData.eventType}
 Message: ${formData.message}`;
 
   window.open(
-    `https://wa.me/916369194095?text=${encodeURIComponent(text)}`,
+    `https://wa.me/919514001155?text=${encodeURIComponent(text)}`,
     "_blank"
   );
 };
