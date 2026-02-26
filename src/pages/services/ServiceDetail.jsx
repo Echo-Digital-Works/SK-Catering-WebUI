@@ -355,7 +355,7 @@ const ServiceDetail = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar alwaysDark={true} />
 
 
       <div className="min-h-screen bg-gradient-to-br from-[#fdfcf9] via-[#f7f3eb] to-[#f2efe9] 

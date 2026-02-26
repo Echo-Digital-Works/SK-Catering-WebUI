@@ -142,8 +142,8 @@ const AboutSection = () => {
             <div className="mt-12 flex items-center gap-4 opacity-80">
               <div className="h-px w-12 bg-amber-500/50"></div>
               <div>
-                <p className="font-serif italic text-2xl text-white">Chef Sebastian</p>
-                <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Founder & Head Chef</p>
+                <p className="font-serif italic text-2xl text-white">Govindarajalu P</p>
+                <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Founder & CEO</p>
               </div>
             </div>
 
