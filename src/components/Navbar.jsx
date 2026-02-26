@@ -14,7 +14,7 @@ const navLinks = [
   { title: "Contact", path: "/contact" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ alwaysDark = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
@@ -62,6 +62,21 @@ const Navbar = () => {
 
   return (
     <>
+
+    <motion.nav
+        ref={navRef}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+        className="fixed top-0 left-0 w-full z-50"
+        style={{
+          // 2. Add 'alwaysDark' to the condition so it forces the dark background
+          backgroundColor: (isScrolled || alwaysDark) ? 'rgba(0, 0, 0, 0.8)' : 'transparent',
+          backdropFilter: navBlur,
+          height: navHeight,
+          boxShadow: navShadow
+        }}
+      ></motion.nav>
       <motion.nav
         ref={navRef}
         initial={{ y: -100, opacity: 0 }}
@@ -182,8 +197,15 @@ const Navbar = () => {
                 onHoverEnd={() => setHoveredLink(null)}
                 className="relative px-1"
               >
-                <Link to={link.path} className="relative text-sm uppercase tracking-widest text-gray-300 py-2 px-4 block">
-                  <motion.span animate={{ color: activeLink === link.path ? "#fbbf24" : "#d1d5db", scale: activeLink === link.path ? 1.05 : 1 }} transition={{ duration: 0.2 }}>
+                <Link to={link.path} className="relative text-sm uppercase tracking-widest py-2 px-4 block">
+                  {/* CHANGED TEXT COLORS HERE: Default is Golden (#fbbf24), Active is White (#ffffff) */}
+                  <motion.span 
+                    animate={{ 
+                      color: activeLink === link.path ? "#fbbf24" : "#fbbf24", 
+                      scale: activeLink === link.path ? 1.05 : 1 
+                    }} 
+                    transition={{ duration: 0.2 }}
+                  >
                     {link.title}
                   </motion.span>
                   <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: hoveredLink === link.title ? 0.1 : 0, scale: hoveredLink === link.title ? 1 : 0 }} transition={{ duration: 0.2 }} className="absolute inset-0 bg-yellow-500 rounded-lg -z-10" />
@@ -211,7 +233,15 @@ const Navbar = () => {
                 <motion.div animate={{ x: ["-100%", "100%"] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
                 <span className="relative z-10 flex items-center gap-2">
                   Enquiry
-                  <motion.span animate={{ x: [0, 5, 0], rotate: [0, 10, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>✉️</motion.span>
+                  <motion.span 
+  className="text-red-500" 
+  animate={{ x: [0, 5, 0], rotate: [0, 10, 0] }} 
+  transition={{ duration: 1.5, repeat: Infinity }}
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+</motion.span>
                 </span>
               </motion.button>
             </div>

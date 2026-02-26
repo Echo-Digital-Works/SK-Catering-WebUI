@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import heroVideo from '../../../public/assets/videos/video.mp4'; // UNCOMMENT THIS
+ // UNCOMMENT THIS
 
 // Animation Variants for Staggered Text
 const containerVariants = {
@@ -56,7 +56,7 @@ const herosection = () => {
       >
         <video
           className="w-full h-full object-cover scale-110" // scale-110 prevents white gaps during parallax
-          src={heroVideo} 
+          src="https://res.cloudinary.com/dowsywzrx/video/upload/v1772079925/0221_fjlojf.mp4" 
           autoPlay
           loop
           muted

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import thabolam1 from '../../../public/assets/thabolam1.jpeg';
 import thabolam2 from '../../../public/assets/thabolam2.jpeg';
 import thabolam3 from '../../../public/assets/thabolam3.jpeg';
+import thabolam4 from '../../../public/assets/thabolam4.jpeg';
+import EnquiryModal from '../../components/EnquiryModal';
 
 // --- MULTI-LANGUAGE INTERFACE TEXT ---
 const uiText = {
@@ -294,7 +296,7 @@ const menuItems = {
     id: 14,
     image: "https://i.ytimg.com/vi/yj4F_4KUwCQ/hqdefault.jpg",
     tag: { en: "Special", ta: "சிறப்பு" },
-    name: { en: "Bismillah Bath", ta: "பிஸ்மில்லா பாத்" },
+    name: { en: "Bisi Bele Bath", ta: "பிசி பேலே பாத்" },
     desc: {
       en: "Aromatic ghee rice infused with whole spices and served hot with flavorful side gravy.",
       ta: "நெய் மற்றும் மசாலா சேர்த்து செய்யப்பட்ட மணம் மிக்க பிஸ்மில்லா பாத்."
@@ -414,9 +416,9 @@ Starters: [
 
   {
     id: 606,
-    image: "https://img.freepik.com/premium-photo/tempting-butter-podi-masala-dosa-south-indian-food-masala-dosa-picture-photography_1020697-133074.jpg?w=2000",
+    image: "https://img.freepik.com/premium-photo/delicious-paneer-butter-masala-photography_928503-851.jpg?w=2000",
     tag: null,
-    name: { en: "PB Masala", ta: "பி.பி மசாலா" },
+    name: { en: "Paneer Butter Masala", ta: "பி.பி மசாலா" },
     desc: {
       en: "Spicy and flavorful masala dish tossed with crunchy vegetables.",
       ta: "மசாலா மற்றும் காய்கறி சேர்த்து செய்யப்பட்ட சுவையான ஸ்டார்டர்."
@@ -580,7 +582,7 @@ Starters: [
     id: 36,
     image: "https://www.jeyashriskitchen.com/wp-content/uploads/2014/07/akkara-adisal.jpg",
     tag: { en: "Traditional Special", ta: "பாரம்பரிய சிறப்பு" },
-    name: { en: "Akkara Adisal", ta: "அக்கார அடிசல்" },
+    name: { en: "Akkaravadisal", ta: "அக்காரவடிசல்" },
     desc: {
       en: "Traditional Tamil sweet made with rice, milk and jaggery.",
       ta: "அரிசி, பால் மற்றும் வெல்லத்தில் செய்யப்பட்ட பாரம்பரிய இனிப்பு."
@@ -869,7 +871,7 @@ Desserts: [
 
   {
     id: 702,
-    image: "https://www.ambafoods.co.in/images/thumbs/0001201_kaju-pista-roll.jpeg",
+    image: "https://media.indulgexpress.com/indulgexpress%2F2024-10-30%2Fmh1fdovj%2Fimage007.jpg?w=640&auto=format%2Ccompress",
     tag: { en: "Premium", ta: "பிரீமியம்" },
     name: { en: "Gold Pista Roll", ta: "கோல்ட் பிஸ்தா ரோல்" },
     desc: {
@@ -981,23 +983,223 @@ Beverages: [
 ],
 
   "Thambulam Bags": [
-    { id: 501, image: thabolam3, tag: { en: "Traditional", ta: "பாரம்பரியம்" }, name: { en: "Printed Thambulam Bag", ta: "தாம்பூலப் பை" }, desc: { en: "Elegant jute drawstring bag with traditional prints for weddings.", ta: "திருமணங்களுக்கு ஏற்ற பாரம்பரிய அச்சுடன் கூடிய சணல் பை." } },
-    { id: 502, image: thabolam2, tag: null, name: { en: "Premium Jute Bag", ta: "பிரீமியம் சணல் பை" }, desc: { en: "High-quality jute bag designed for traditional wedding returns.", ta: "திருமண தாம்பூலத்திற்கு ஏற்ற உயர்தரமான சணல் பை." } },
-    {
-  id: 503,
-  image: thabolam1,
-  tag: { en: "Premium", ta: "பிரீமியம்" },
-  name: { 
-    en: "Designer Thambulam Bag", 
-    ta: "டிசைனர் தாம்பூலப் பை" 
+  {
+    id: 504,
+    image: thabolam2,
+    tag: { en: "Luxury", ta: "ஆடம்பரம்" },
+    name: { 
+      en: "Luxury Fabric Thambulam Bag", 
+      ta: "லக்ஸுரி துணி தாம்பூலப் பை" 
+    },
+    desc: { 
+      en: "Exquisitely tailored premium fabric bag crafted for graceful wedding return gifting with a refined and elegant finish.", 
+      ta: "மென்மையான உயர்தர துணியில் அழகாக வடிவமைக்கப்பட்ட, திருமண தாம்பூலத்திற்கு சிறப்பான ஆடம்பர நிறைவுடன் தயாரிக்கப்பட்ட பை." 
+    }
   },
-  desc: { 
-    en: "Beautifully crafted designer jute thambulam bag with zari border and premium finish, perfect for weddings and special occasions.", 
-    ta: "ஜரி அலங்காரம் மற்றும் அழகான வடிவமைப்புடன் தயாரிக்கப்பட்ட பிரீமியம் தாம்பூலப் பை, திருமணங்களுக்கு சிறந்த தேர்வு." 
+  {
+    id: 505,
+    image: thabolam1,
+    tag: { en: "Signature Collection", ta: "சிக்னேச்சர் கலெக்ஷன்" },
+    name: { 
+      en: "Signature Jute Bag with Elegant Seal", 
+      ta: "அழகிய முத்திரையுடன் சிக்னேச்சர் சணல் பை" 
+    },
+    desc: { 
+      en: "Premium handcrafted jute bag featuring a refined closure seal for a sophisticated and grand wedding presentation.", 
+      ta: "நாகரிகமான மற்றும் பிரம்மாண்டமான திருமண வழங்கலுக்காக அழகிய மூடியுடன் கைவினைத் திறனில் உருவாக்கப்பட்ட உயர்தர சணல் பை." 
+    }
+  },
+  {
+    id: 506,
+    image: thabolam3,
+    tag: { en: "Elite", ta: "எலீட்" },
+    name: { 
+      en: "Elite Designer Bag with Magnetic Lock", 
+      ta: "காந்த பூட்டுடன் எலீட் டிசைனர் பை" 
+    },
+    desc: { 
+      en: "A statement designer piece enhanced with a concealed magnetic lock, offering unmatched luxury, elegance, and secure sophistication.", 
+      ta: "மறைவு காந்த பூட்டுடன் வடிவமைக்கப்பட்ட, ஒப்பற்ற ஆடம்பரமும் நாகரிகமும் பாதுகாப்பும் இணைந்த சிறப்பு டிசைனர் பை." 
+    }
+  },
+  {
+    id: 507,
+    image: thabolam4,
+    tag: { en: "Exclusive", ta: "எக்ஸ்க்ளூசிவ்" },
+    name: { 
+      en: "Exclusive Resin Bag with Premium Zip Finish", 
+      ta: "பிரீமியம் ஜிப் நிறைவுடன் எக்ஸ்க்ளூசிவ் ரெசின் பை" 
+    },
+    desc: { 
+      en: "Contemporary resin-crafted bag with a smooth premium zip closure, designed for luxurious and modern wedding return gifting.", 
+      ta: "நவீன வடிவமைப்பில் ரெசின் மூலம் உருவாக்கப்பட்ட, மென்மையான பிரீமியம் ஜிப் மூடியுடன் கூடிய ஆடம்பர திருமண பரிசுப் பை." 
+    }
   }
-}
-  ]
+]
 };
+
+// const MenuPage = () => {
+//   const [activeTab, setActiveTab] = useState("Breakfast");
+//   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+//   const [selectedItem, setSelectedItem] = useState(null);
+//   const [lang, setLang] = useState('en');
+
+//   const toggleLang = () => setLang(prev => prev === 'en' ? 'ta' : 'en');
+
+//   const handleEnquiry = (item) => {
+//     setSelectedItem(item);
+//     setIsEnquiryOpen(true);
+//   };
+
+//   return (
+//     <>
+//       <Navbar />
+//       <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-amber-500 selection:text-black">
+//         {/* Decorative Background */}
+//         <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-amber-900/20 to-transparent pointer-events-none" />
+//         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
+
+//         {/* Language Toggle */}
+//         <div className="absolute top-24 right-6 z-20">
+//           <button onClick={toggleLang} className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all flex items-center gap-2">
+//             <span className={lang === 'en' ? "text-amber-400" : "text-gray-500"}>ENG</span>
+//             <span className="w-[1px] h-3 bg-white/30"></span>
+//             <span className={lang === 'ta' ? "text-amber-400" : "text-gray-500"}>தமிழ்</span>
+//           </button>
+//         </div>
+
+//         {/* Hero Section */}
+//         <section className="relative pt-32 pb-16 px-6 text-center z-10">
+//           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+//             <span className="text-amber-500 font-mono text-xs tracking-[0.4em] uppercase block mb-4">{uiText[lang].subtitle}</span>
+//             <h1 className="text-5xl md:text-8xl font-serif text-white mb-6">
+//               {uiText[lang].title} <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600">{uiText[lang].titleHighlight}</span>
+//             </h1>
+//             <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg font-light leading-relaxed">{uiText[lang].desc}</p>
+//           </motion.div>
+//         </section>
+
+//         {/* Sticky Tab Navigation */}
+//         <div className="sticky top-20 z-30 py-6 bg-[#050505]/95 backdrop-blur-md border-b border-white/10">
+//           <div className="max-w-7xl mx-auto px-4">
+//             <div className="flex flex-wrap gap-3 justify-center items-center">
+//               {categoryConfig.map((cat) => (
+//                 <button
+//                   key={cat.key}
+//                   onClick={() => setActiveTab(cat.key)}
+//                   className={`relative px-5 py-2 text-xs md:text-sm font-bold uppercase tracking-widest transition-all duration-300 whitespace-nowrap rounded-full border
+//                     ${activeTab === cat.key ? 'text-black bg-amber-500 border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.4)]' : 'text-gray-400 border-white/10 hover:border-white/30 hover:text-white bg-white/5'}`}
+//                 >
+//                   {cat.label[lang]}
+//                 </button>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Menu Grid */}
+//         <div className="max-w-7xl mx-auto px-4 py-16 min-h-[60vh]">
+//           <AnimatePresence mode="wait">
+//             <motion.div
+//               key={activeTab + lang}
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               exit={{ opacity: 0, y: -20 }}
+//               transition={{ duration: 0.4 }}
+//               className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
+//             >
+//               {menuItems[activeTab]?.map((item) => {
+//                 const isThambulam = activeTab === 'Thambulam Bags';
+                
+//                 return (
+//                   <div 
+//                     key={item.id} 
+//                     onClick={() => handleEnquiry(item)} 
+//                     // 1. We switch to flex-row (horizontal) ONLY for Thambulam Bags
+//                     className={`group relative bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-amber-500/30 transition-colors duration-500 cursor-pointer ${
+//                       isThambulam ? 'flex flex-col md:flex-row' : ''
+//                     }`}
+//                   >
+                    
+//                     {/* --- IMAGE SECTION --- */}
+//                     <div className={`relative overflow-hidden ${isThambulam ? 'w-full md:w-2/5 h-64 md:h-auto min-h-[260px]' : 'h-64 w-full'}`}>
+//                       <img 
+//                         src={item.image} 
+//                         alt={item.name[lang]} 
+//                         className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${
+//                           isThambulam ? 'object-cover object-center' : 'object-cover'
+//                         }`} 
+//                       />
+                      
+//                       {/* Gradient fades to the right for horizontal cards, and up for standard cards */}
+//                       <div className={`absolute inset-0 opacity-90 ${
+//                         isThambulam ? 'bg-gradient-to-t md:bg-gradient-to-r from-[#111] via-transparent to-transparent' : 'bg-gradient-to-t from-[#111] via-[#111]/20 to-transparent'
+//                       }`} />
+                      
+//                       {item.tag && (
+//                         <span className={`absolute top-4 ${isThambulam ? 'left-4 right-auto' : 'right-4'} bg-amber-500 text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg z-10`}>
+//                           {item.tag[lang]}
+//                         </span>
+//                       )}
+//                     </div>
+                    
+//                     {/* --- TEXT SECTION --- */}
+//                     <div className={`p-8 relative flex flex-col ${isThambulam ? 'w-full md:w-3/5 justify-center' : '-mt-12'}`}>
+//                       <div className="flex justify-between items-baseline mb-3">
+//                         <h3 className="text-2xl font-serif text-white group-hover:text-amber-400 transition-colors duration-300">{item.name[lang]}</h3>
+//                         <span className="text-amber-500 text-xl">✦</span>
+//                       </div>
+//                       <p className="text-gray-400 text-sm leading-relaxed mb-6">{item.desc[lang]}</p>
+//                     </div>
+                    
+//                   </div>
+//                 );
+//               })}
+                  
+                  
+//                   {/* 3. We adjust the text margin so it doesn't overlap the smaller image */}
+//                   {/* <div className={`p-8 relative ${activeTab === 'Thambulam Bags' ? '-mt-4' : '-mt-12'}`}>
+//                     <div className="flex justify-between items-baseline mb-3">
+//                       <h3 className="text-2xl font-serif text-white group-hover:text-amber-400 transition-colors duration-300">{item.name[lang]}</h3>
+//                       <span className="text-amber-500 text-xl">✦</span>
+//                     </div>
+//                     <p className="text-gray-400 text-sm leading-relaxed mb-6">{item.desc[lang]}</p>
+//                   </div>
+//                 </div>
+//               ))} */}
+//             </motion.div>
+//           </AnimatePresence>
+//         </div>
+//       </div>
+
+//       {/* Enquiry Modal */}
+//       <AnimatePresence>
+//         {isEnquiryOpen && selectedItem && (
+//           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={() => setIsEnquiryOpen(false)}>
+//             <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ scale: 0.9 }} transition={{ type: "spring" }} onClick={(e) => e.stopPropagation()} className="bg-[#111] text-white rounded-2xl p-8 w-[90%] max-w-md border border-white/10 relative">
+//               <div className="flex justify-between items-center mb-6">
+//                 <h2 className="text-2xl font-serif text-amber-400">{uiText[lang].enquiryTitle}</h2>
+//                 <button onClick={() => setIsEnquiryOpen(false)} className="text-white/50 hover:text-white text-xl">✕</button>
+//               </div>
+//               <div className="mb-6">
+//                 <img src={selectedItem.image} alt={selectedItem.name[lang]} className="w-full h-40 object-cover rounded-xl mb-4" />
+//                 <h3 className="text-lg font-bold">{selectedItem.name[lang]}</h3>
+//                 <p className="text-sm text-gray-400 mt-1">{selectedItem.desc[lang]}</p>
+//               </div>
+//               <div className="flex justify-end gap-4">
+//                 <button onClick={() => setIsEnquiryOpen(false)} className="px-5 py-2 text-sm uppercase text-gray-400">{uiText[lang].cancel}</button>
+//                 <button className="px-6 py-2 bg-amber-500 text-black text-sm font-bold uppercase rounded-full transition">{uiText[lang].proceed}</button>
+//               </div>
+//             </motion.div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//       <Footer />
+//     </>
+//   );
+// };
+
+
 
 const MenuPage = () => {
   const [activeTab, setActiveTab] = useState("Breakfast");
@@ -1009,6 +1211,33 @@ const MenuPage = () => {
 
   const handleEnquiry = (item) => {
     setSelectedItem(item);
+    setIsEnquiryOpen(true);
+  };
+
+  // 🚀 NEW: This tells the browser to smoothly scroll to the top whenever the active tab changes!
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTab]);
+
+  // --- NEW OFFER POPUP LOGIC ---
+  const [isOfferOpen, setIsOfferOpen] = useState(false);
+
+  // Show the popup automatically 1.5 seconds after the page loads
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOfferOpen(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // When they click "Enquire Now" on the offer, open the main enquiry form with package details
+  const handleOfferEnquiry = () => {
+    setIsOfferOpen(false);
+    setSelectedItem({
+      name: { en: "Premium Wedding Package", ta: "பிரீமியம் திருமண பேக்கேஜ்" },
+      desc: { en: "Marriage catering package starting from Rs 2,99,999/-", ta: "ரூ. 2,99,999/- முதல் தொடங்கும் திருமண கேட்டரிங் பேக்கேஜ்" },
+      image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80"
+    });
     setIsEnquiryOpen(true);
   };
 
@@ -1069,22 +1298,51 @@ const MenuPage = () => {
               transition={{ duration: 0.4 }}
               className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
             >
-              {menuItems[activeTab]?.map((item) => (
-                <div key={item.id} onClick={() => handleEnquiry(item)} className="group relative bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-amber-500/30 transition-colors duration-500 cursor-pointer">
-                  <div className="relative h-64 overflow-hidden">
-                    <img src={item.image} alt={item.name[lang]} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent opacity-90" />
-                    {item.tag && <span className="absolute top-4 right-4 bg-amber-500 text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">{item.tag[lang]}</span>}
-                  </div>
-                  <div className="p-8 relative -mt-12">
-                    <div className="flex justify-between items-baseline mb-3">
-                      <h3 className="text-2xl font-serif text-white group-hover:text-amber-400 transition-colors duration-300">{item.name[lang]}</h3>
-                      <span className="text-amber-500 text-xl">✦</span>
+              {menuItems[activeTab]?.map((item) => {
+                const isThambulam = activeTab === 'Thambulam Bags';
+                
+                return (
+                  <div 
+                    key={item.id} 
+                    onClick={() => handleEnquiry(item)} 
+                    className={`group relative bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-amber-500/30 transition-colors duration-500 cursor-pointer ${
+                      isThambulam ? 'flex flex-col md:flex-row' : ''
+                    }`}
+                  >
+                    
+                    {/* --- IMAGE SECTION --- */}
+                    <div className={`relative overflow-hidden ${isThambulam ? 'w-full md:w-2/5 h-64 md:h-auto min-h-[260px]' : 'h-64 w-full'}`}>
+                      <img 
+                        src={item.image} 
+                        alt={item.name[lang]} 
+                        className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${
+                          isThambulam ? 'object-cover object-center' : 'object-cover'
+                        }`} 
+                      />
+                      
+                      <div className={`absolute inset-0 opacity-90 ${
+                        isThambulam ? 'bg-gradient-to-t md:bg-gradient-to-r from-[#111] via-transparent to-transparent' : 'bg-gradient-to-t from-[#111] via-[#111]/20 to-transparent'
+                      }`} />
+                      
+                      {item.tag && (
+                        <span className={`absolute top-4 ${isThambulam ? 'left-4 right-auto' : 'right-4'} bg-amber-500 text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg z-10`}>
+                          {item.tag[lang]}
+                        </span>
+                      )}
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6">{item.desc[lang]}</p>
+                    
+                    {/* --- TEXT SECTION --- */}
+                    <div className={`p-8 relative flex flex-col ${isThambulam ? 'w-full md:w-3/5 justify-center' : '-mt-12'}`}>
+                      <div className="flex justify-between items-baseline mb-3">
+                        <h3 className="text-2xl font-serif text-white group-hover:text-amber-400 transition-colors duration-300">{item.name[lang]}</h3>
+                        <span className="text-amber-500 text-xl">✦</span>
+                      </div>
+                      <p className="text-gray-400 text-sm leading-relaxed mb-6">{item.desc[lang]}</p>
+                    </div>
+                    
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -1112,9 +1370,96 @@ const MenuPage = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* --- SPECIAL WEDDING OFFER POPUP --- */}
+      <AnimatePresence>
+        {isOfferOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }} 
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-md px-4" 
+            onClick={() => setIsOfferOpen(false)}
+          >
+            <motion.div 
+              initial={{ scale: 0.8, y: 50 }} 
+              animate={{ scale: 1, y: 0 }} 
+              exit={{ scale: 0.8, opacity: 0 }} 
+              transition={{ type: "spring", damping: 25, stiffness: 300 }} 
+              onClick={(e) => e.stopPropagation()} 
+              className="bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] text-white rounded-3xl p-1 w-full max-w-md border border-amber-500/30 relative shadow-[0_0_40px_rgba(245,158,11,0.2)] overflow-hidden"
+            >
+              {/* Golden Inner Border */}
+              <div className="border border-amber-500/20 rounded-[22px] p-8 relative overflow-hidden">
+                
+                {/* Close Button */}
+                <button onClick={() => setIsOfferOpen(false)} className="absolute top-4 right-4 text-white/40 hover:text-white text-xl z-20 transition-colors">✕</button>
+                
+                {/* Content */}
+                <div className="text-center relative z-10 mt-2">
+                  <span className="inline-block py-1 px-3 rounded-full bg-amber-500/10 text-amber-500 text-[10px] font-bold uppercase tracking-widest mb-4 border border-amber-500/20">
+                    {lang === 'en' ? "Exclusive Offer" : "சிறப்பு சலுகை"}
+                  </span>
+                  
+                  <h2 className="text-3xl font-serif text-white mb-3">
+                    {lang === 'en' ? "Planning a " : "பிரம்மாண்டமான "}
+                    <span className="text-amber-500 italic">{lang === 'en' ? "Grand Wedding?" : "திருமணம் திட்டமிடுகிறீர்களா?"}</span>
+                  </h2>
+                  
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                    {lang === 'en' 
+                      ? "Make your special day unforgettable with our Premium Marriage Catering. World-class taste and elegant service." 
+                      : "எங்கள் பிரீமியம் திருமண கேட்டரிங் மூலம் உங்கள் சிறப்பு நாளை மறக்க முடியாததாக மாற்றுங்கள்."}
+                  </p>
+                  
+                  {/* Price Box */}
+                  <div className="bg-black/50 rounded-xl p-5 mb-8 border border-white/5 shadow-inner">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">
+                      {lang === 'en' ? "Packages Start From" : "பேக்கேஜ்கள் தொடக்கம்"}
+                    </p>
+                    <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600">
+                      ₹ 2,99,999/-
+                    </p>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-col gap-3">
+                    <button 
+                      onClick={handleOfferEnquiry} 
+                      className="w-full py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black text-sm font-bold uppercase tracking-widest rounded-xl shadow-lg transition-all transform hover:scale-[1.02]"
+                    >
+                      {lang === 'en' ? "Enquire Now ✦" : "விசாரிக்கவும் ✦"}
+                    </button>
+                    <button 
+                      onClick={() => setIsOfferOpen(false)} 
+                      className="w-full py-3 text-xs uppercase tracking-wider text-gray-500 hover:text-white transition-colors"
+                    >
+                      {lang === 'en' ? "Maybe Later" : "பிறகு"}
+                    </button>
+                  </div>
+                </div>
+                
+                {/* Decorative Background Glows */}
+                <div className="absolute top-[-50px] left-[-50px] w-32 h-32 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute bottom-[-50px] right-[-50px] w-32 h-32 bg-amber-600/20 rounded-full blur-3xl pointer-events-none" />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <EnquiryModal 
+        isOpen={isEnquiryOpen} 
+        onClose={() => setIsEnquiryOpen(false)} 
+      />
+
+      {/* Put it right above this footer: */}
+      
       <Footer />
     </>
   );
 };
+
+
 
 export default MenuPage;

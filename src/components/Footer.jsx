@@ -187,7 +187,7 @@ const Footer = () => {
             © 2026 SK Caterings. All rights reserved.
           </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-amber-500 transition-colors">Developed by : Echo Digital Works</a>
+            <a href="https://echodigitalworks.in" className="hover:text-amber-500 transition-colors">Developed by : Echo Digital Works</a>
           </div>
         </motion.div>
       </motion.div>
