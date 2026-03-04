@@ -126,7 +126,7 @@ Message: ${formData.message}`;
   name="name"
   value={formData.name}
   onChange={handleChange}
-  placeholder="John Doe"
+  
   className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 
 text-sm text-gray-900 placeholder-gray-400 
 focus:outline-none focus:border-amber-500"
@@ -141,7 +141,7 @@ focus:outline-none focus:border-amber-500"
   name="phone"
   value={formData.phone}
   onChange={handleChange}
-  placeholder="+91 98765..."
+  
    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 
 text-sm text-gray-900 placeholder-gray-400 
 focus:outline-none focus:border-amber-500"
