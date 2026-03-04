@@ -18,10 +18,10 @@ const footerLinks = {
 };
 
 const socialIcons = [
-  { name: "Facebook", path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
-  { name: "Instagram", path: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 017.8 2m-.2 2A3.6 3.6 0 004 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 003.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6z" },
-  { name: "Twitter", path: "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" },
-  { name: "YouTube", path: "M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02l5.75-3.27-5.75-3.27v6.54z" }
+  { name: "Facebook", path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z", url: "https://www.facebook.com/people/SK-Catering-Services/61586084293076/" },
+  { name: "Instagram", path: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 017.8 2m-.2 2A3.6 3.6 0 004 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 003.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6z", url: "https://www.instagram.com/skfoods_catering/" },
+  { name: "Twitter", path: "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z", url: "#" },
+  { name: "YouTube", path: "M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02l5.75-3.27-5.75-3.27v6.54z", url: "#" }
 ];
 
 // --- ANIMATION VARIANTS ---
@@ -79,7 +79,7 @@ const Footer = () => {
                 </svg>
               </div>
               <span className="text-2xl font-serif text-white font-bold tracking-wide">
-                SK Caterings
+                SK Catering Services
               </span>
             </div>
             
@@ -92,7 +92,7 @@ const Footer = () => {
               {socialIcons.map((icon) => (
                 <motion.a
                   key={icon.name}
-                  href="#"
+                  href={icon.url}
                   whileHover={{ y: -3, color: "#f59e0b" }}
                   className="text-zinc-600 transition-colors duration-300"
                 >
@@ -143,6 +143,7 @@ const Footer = () => {
           </motion.div>
 
           {/* COLUMN 4: STAY CONNECTED */}
+          
           <motion.div variants={itemVariants} className="space-y-6">
             <h3 className="text-white font-semibold tracking-wide">Stay Connected</h3>
             <p className="text-zinc-500 text-sm">
@@ -171,7 +172,7 @@ const Footer = () => {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                   <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                support@skcaterings.com
+                skcateringservices99@gmail.com
               </div>
             </form>
           </motion.div>
@@ -184,7 +185,7 @@ const Footer = () => {
           className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600"
         >
           <div>
-            © 2026 SK Caterings. All rights reserved.
+            © 2026 SK Catering Services. All rights reserved.
           </div>
           <div className="flex gap-6">
             <a href="https://echodigitalworks.in" className="hover:text-amber-500 transition-colors">Developed by : Echo Digital Works</a>

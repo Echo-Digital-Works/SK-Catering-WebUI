@@ -126,11 +126,11 @@ const Contact = () => {
                     <div className="grid md:grid-cols-2 gap-8">
                       <div className="group relative">
                         <label className="text-xs text-amber-500/70 uppercase tracking-widest mb-2 block">Host Name</label>
-                        <input type="text" placeholder="John Doe" className="w-full bg-transparent border-b border-white/20 py-2 text-white placeholder:text-white/20 focus:outline-none focus:border-amber-500 transition-colors" />
+                        <input type="text" placeholder="" className="w-full bg-transparent border-b border-white/20 py-2 text-white placeholder:text-white/20 focus:outline-none focus:border-amber-500 transition-colors" />
                       </div>
                       <div className="group relative">
                         <label className="text-xs text-amber-500/70 uppercase tracking-widest mb-2 block">Contact No.</label>
-                        <input type="text" placeholder="+91 00000 00000" className="w-full bg-transparent border-b border-white/20 py-2 text-white placeholder:text-white/20 focus:outline-none focus:border-amber-500 transition-colors" />
+                        <input type="text" placeholder="" className="w-full bg-transparent border-b border-white/20 py-2 text-white placeholder:text-white/20 focus:outline-none focus:border-amber-500 transition-colors" />
                       </div>
                     </div>
 
@@ -279,7 +279,7 @@ const Contact = () => {
                </div>
                <div>
                   <p className="text-amber-500 text-xs font-bold uppercase tracking-wider">Priority Support</p>
-                  <p className="text-white text-2xl font-serif font-bold">+91 95140 01155</p>
+                  <p className="text-white text-2xl font-serif font-bold">+91 95140 01177</p>
                </div>
             </motion.div>
 
