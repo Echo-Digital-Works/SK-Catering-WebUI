@@ -44,6 +44,7 @@ const categoryConfig = [
   { key: "Desserts", label: { en: "Desserts", ta: "இனிப்பு வகைகள்" } },
   { key: "Beverages", label: { en: "Beverages", ta: "பானங்கள்" } },
   { key: "Thambulam Bags", label: { en: "Thambulam Bags", ta: "தாம்பூலப் பைகள்" } },
+  { key: "Seemantham", label: { en: "Seemantham ", ta: "சீமந்தம் " } },
 ];
 
 const menuItems = {
@@ -1034,170 +1035,172 @@ Beverages: [
       en: "Contemporary resin-crafted bag with a smooth premium zip closure, designed for luxurious and modern wedding return gifting.", 
       ta: "நவீன வடிவமைப்பில் ரெசின் மூலம் உருவாக்கப்பட்ட, மென்மையான பிரீமியம் ஜிப் மூடியுடன் கூடிய ஆடம்பர திருமண பரிசுப் பை." 
     }
+   }
+  ],
+
+   Seemantham: [
+  {
+    id: 901,
+    image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/11/gulab-jamun.jpg",
+    tag: { en: "Sweet", ta: "இனிப்பு" },
+    name: { en: "Sweet", ta: "இனிப்பு" },
+    desc: {
+      en: "Traditional sweet served during Seemantham function.",
+      ta: "சீமந்த விழாவில் வழங்கப்படும் பாரம்பரிய இனிப்பு."
+    }
+  },
+  {
+    id: 902,
+    image: "https://c2.staticflickr.com/2/1573/26228293860_7fe1c6abf7_z.jpg",
+    tag: null,
+    name: { en: "Curd Vada", ta: "தயிர் வடை" },
+    desc: {
+      en: "Soft vadas soaked in fresh curd and tempered spices.",
+      ta: "மென்மையான வடை, தயிரில் ஊறவைத்து வழங்கப்படும்."
+    }
+  },
+  {
+    id: 903,
+    image: "https://minimalistbaker.com/wp-content/uploads/2020/11/Easy-Coconut-Rice-SQUARE.jpg",
+    tag: null,
+    name: { en: "Coconut Rice", ta: "தேங்காய் சாதம்" },
+    desc: {
+      en: "Fragrant coconut rice tempered with curry leaves and mustard.",
+      ta: "கறிவேப்பிலை மற்றும் கடுகு தாளித்து செய்யப்பட்ட தேங்காய் சாதம்."
+    }
+  },
+  {
+    id: 904,
+    image: "https://spicecontainer.com/wp-content/uploads/2020/09/puliyodharai-tamarind-rice.jpg",
+    tag: null,
+    name: { en: "Tamarind Rice", ta: "புளியோதரை" },
+    desc: {
+      en: "Tangy and spicy tamarind flavored rice.",
+      ta: "புளி மற்றும் மசாலா சேர்த்து செய்யப்பட்ட சாதம்."
+    }
+  },
+  {
+    id: 905,
+    image: "https://veeroverseas.com/wp-content/uploads/2022/08/mango-rice.jpeg",
+    tag: null,
+    name: { en: "Mango Rice", ta: "மாங்காய் சாதம்" },
+    desc: {
+      en: "Raw mango rice with mild spices and peanuts.",
+      ta: "மாங்காய் மற்றும் நிலக்கடலை சேர்த்து செய்யப்பட்ட சாதம்."
+    }
+  },
+  {
+    id: 906,
+    image: "https://www.spiceupthecurry.com/wp-content/uploads/2012/07/indian-lemon-rice-2.jpg",
+    tag: null,
+    name: { en: "Lemon Rice", ta: "எலுமிச்சை சாதம்" },
+    desc: {
+      en: "Refreshing lemon flavored rice with tempered spices.",
+      ta: "எலுமிச்சை சாறு சேர்த்து செய்யப்பட்ட சாதம்."
+    }
+  },
+  {
+    id: 907,
+    image: "https://www.namscorner.com/wp-content/uploads/2020/01/curry_leaves_rice/82578289_174974407204870_5716500844187222016_n.jpg",
+    tag: null,
+    name: { en: "Karuvepilai Rice", ta: "கறிவேப்பிலை சாதம்" },
+    desc: {
+      en: "Aromatic curry leaf rice rich in flavor.",
+      ta: "கறிவேப்பிலை மணம் மிக்க சாதம்."
+    }
+  },
+  {
+    id: 908,
+    image: "https://purendesi.in/wp-content/uploads/2023/03/Vegetable-Biryani-Recipe.jpg",
+    tag: { en: "Special", ta: "சிறப்பு" },
+    name: { en: "Veg Biryani", ta: "வெஜ் பிரியாணி" },
+    desc: {
+      en: "Spiced vegetable biryani made with aromatic basmati rice.",
+      ta: "காய்கறி மற்றும் மசாலா சேர்த்து செய்யப்பட்ட பிரியாணி."
+    }
+  },
+  {
+    id: 909,
+    image: "https://i.ytimg.com/vi/PXcJXy0HBzc/maxresdefault.jpg",
+    tag: null,
+    name: { en: "Pudhina Rice", ta: "புதினா சாதம்" },
+    desc: {
+      en: "Mint flavored rice with fresh herbs and spices.",
+      ta: "புதினா மற்றும் மசாலா சேர்த்து செய்யப்பட்ட சாதம்."
+    }
+  },
+  {
+    id: 910,
+    image: "https://png.pngtree.com/thumb_back/fh260/background/20230426/pngtree-an-image-of-white-rice-in-the-bowl-with-steam-coming-image_2549918.jpg",
+    tag: null,
+    name: { en: "White Rice", ta: "வெள்ளை சாதம்" },
+    desc: {
+      en: "Steamed white rice served hot.",
+      ta: "சூடான வெள்ளை சாதம்."
+    }
+  },
+  {
+    id: 911,
+    image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/05/sambar-recipe.jpg",
+    tag: null,
+    name: { en: "Sambar", ta: "சாம்பார்" },
+    desc: {
+      en: "Traditional lentil curry with vegetables.",
+      ta: "காய்கறி சேர்த்து செய்யப்பட்ட சாம்பார்."
+    }
+  },
+  {
+    id: 912,
+    image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2018/11/rasam-recipe.jpg",
+    tag: null,
+    name: { en: "Rasam", ta: "ரசம்" },
+    desc: {
+      en: "Pepper and tamarind flavored rasam.",
+      ta: "மிளகு மற்றும் புளி சேர்த்து செய்யப்பட்ட ரசம்."
+    }
+  },
+  {
+    id: 913,
+    image: "https://images.hindustantimes.com/img/2022/12/06/550x309/dahi_1654357494111_1670328535117_1670328535117.jpg",
+    tag: null,
+    name: { en: "Curd", ta: "தயிர்" },
+    desc: {
+      en: "Fresh and thick curd.",
+      ta: "புதிய தயிர்."
+    }
+  },
+  {
+    id: 914,
+    image: "https://www.cookscribe.com/wp-content/uploads/2022/08/Potato-Fry-Recipe.jpg",
+    tag: null,
+    name: { en: "Potato Fry", ta: "உருளைக்கிழங்கு வறுவல்" },
+    desc: {
+      en: "Crispy spiced potato fry.",
+      ta: "காரமான உருளைக்கிழங்கு வறுவல்."
+    }
+  },
+  {
+    id: 915,
+    image: "https://5.imimg.com/data5/ANDROID/Default/2022/8/SS/BY/QK/63020576/product-jpeg-500x500.jpg",
+    tag: null,
+    name: { en: "Appalam", ta: "அப்பளம்" },
+    desc: {
+      en: "Crispy fried papad.",
+      ta: "மொறுமொறுப்பான அப்பளம்."
+    }
+  },
+  {
+    id: 916,
+    image: "https://athithigruhafoods.in/cdn/shop/files/Magaya-Pickle.jpg?v=1716880404",
+    tag: null,
+    name: { en: "Pickles", ta: "ஊறுகாய்" },
+    desc: {
+      en: "Traditional homemade pickles.",
+      ta: "பாரம்பரிய ஊறுகாய்."
+    }
   }
-]
-};
+]   };
 
-// const MenuPage = () => {
-//   const [activeTab, setActiveTab] = useState("Breakfast");
-//   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
-//   const [selectedItem, setSelectedItem] = useState(null);
-//   const [lang, setLang] = useState('en');
-
-//   const toggleLang = () => setLang(prev => prev === 'en' ? 'ta' : 'en');
-
-//   const handleEnquiry = (item) => {
-//     setSelectedItem(item);
-//     setIsEnquiryOpen(true);
-//   };
-
-//   return (
-//     <>
-//       <Navbar />
-//       <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-amber-500 selection:text-black">
-//         {/* Decorative Background */}
-//         <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-amber-900/20 to-transparent pointer-events-none" />
-//         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
-
-//         {/* Language Toggle */}
-//         <div className="absolute top-24 right-6 z-20">
-//           <button onClick={toggleLang} className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all flex items-center gap-2">
-//             <span className={lang === 'en' ? "text-amber-400" : "text-gray-500"}>ENG</span>
-//             <span className="w-[1px] h-3 bg-white/30"></span>
-//             <span className={lang === 'ta' ? "text-amber-400" : "text-gray-500"}>தமிழ்</span>
-//           </button>
-//         </div>
-
-//         {/* Hero Section */}
-//         <section className="relative pt-32 pb-16 px-6 text-center z-10">
-//           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-//             <span className="text-amber-500 font-mono text-xs tracking-[0.4em] uppercase block mb-4">{uiText[lang].subtitle}</span>
-//             <h1 className="text-5xl md:text-8xl font-serif text-white mb-6">
-//               {uiText[lang].title} <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600">{uiText[lang].titleHighlight}</span>
-//             </h1>
-//             <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg font-light leading-relaxed">{uiText[lang].desc}</p>
-//           </motion.div>
-//         </section>
-
-//         {/* Sticky Tab Navigation */}
-//         <div className="sticky top-20 z-30 py-6 bg-[#050505]/95 backdrop-blur-md border-b border-white/10">
-//           <div className="max-w-7xl mx-auto px-4">
-//             <div className="flex flex-wrap gap-3 justify-center items-center">
-//               {categoryConfig.map((cat) => (
-//                 <button
-//                   key={cat.key}
-//                   onClick={() => setActiveTab(cat.key)}
-//                   className={`relative px-5 py-2 text-xs md:text-sm font-bold uppercase tracking-widest transition-all duration-300 whitespace-nowrap rounded-full border
-//                     ${activeTab === cat.key ? 'text-black bg-amber-500 border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.4)]' : 'text-gray-400 border-white/10 hover:border-white/30 hover:text-white bg-white/5'}`}
-//                 >
-//                   {cat.label[lang]}
-//                 </button>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Menu Grid */}
-//         <div className="max-w-7xl mx-auto px-4 py-16 min-h-[60vh]">
-//           <AnimatePresence mode="wait">
-//             <motion.div
-//               key={activeTab + lang}
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               exit={{ opacity: 0, y: -20 }}
-//               transition={{ duration: 0.4 }}
-//               className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
-//             >
-//               {menuItems[activeTab]?.map((item) => {
-//                 const isThambulam = activeTab === 'Thambulam Bags';
-                
-//                 return (
-//                   <div 
-//                     key={item.id} 
-//                     onClick={() => handleEnquiry(item)} 
-//                     // 1. We switch to flex-row (horizontal) ONLY for Thambulam Bags
-//                     className={`group relative bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-amber-500/30 transition-colors duration-500 cursor-pointer ${
-//                       isThambulam ? 'flex flex-col md:flex-row' : ''
-//                     }`}
-//                   >
-                    
-//                     {/* --- IMAGE SECTION --- */}
-//                     <div className={`relative overflow-hidden ${isThambulam ? 'w-full md:w-2/5 h-64 md:h-auto min-h-[260px]' : 'h-64 w-full'}`}>
-//                       <img 
-//                         src={item.image} 
-//                         alt={item.name[lang]} 
-//                         className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${
-//                           isThambulam ? 'object-cover object-center' : 'object-cover'
-//                         }`} 
-//                       />
-                      
-//                       {/* Gradient fades to the right for horizontal cards, and up for standard cards */}
-//                       <div className={`absolute inset-0 opacity-90 ${
-//                         isThambulam ? 'bg-gradient-to-t md:bg-gradient-to-r from-[#111] via-transparent to-transparent' : 'bg-gradient-to-t from-[#111] via-[#111]/20 to-transparent'
-//                       }`} />
-                      
-//                       {item.tag && (
-//                         <span className={`absolute top-4 ${isThambulam ? 'left-4 right-auto' : 'right-4'} bg-amber-500 text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg z-10`}>
-//                           {item.tag[lang]}
-//                         </span>
-//                       )}
-//                     </div>
-                    
-//                     {/* --- TEXT SECTION --- */}
-//                     <div className={`p-8 relative flex flex-col ${isThambulam ? 'w-full md:w-3/5 justify-center' : '-mt-12'}`}>
-//                       <div className="flex justify-between items-baseline mb-3">
-//                         <h3 className="text-2xl font-serif text-white group-hover:text-amber-400 transition-colors duration-300">{item.name[lang]}</h3>
-//                         <span className="text-amber-500 text-xl">✦</span>
-//                       </div>
-//                       <p className="text-gray-400 text-sm leading-relaxed mb-6">{item.desc[lang]}</p>
-//                     </div>
-                    
-//                   </div>
-//                 );
-//               })}
-                  
-                  
-//                   {/* 3. We adjust the text margin so it doesn't overlap the smaller image */}
-//                   {/* <div className={`p-8 relative ${activeTab === 'Thambulam Bags' ? '-mt-4' : '-mt-12'}`}>
-//                     <div className="flex justify-between items-baseline mb-3">
-//                       <h3 className="text-2xl font-serif text-white group-hover:text-amber-400 transition-colors duration-300">{item.name[lang]}</h3>
-//                       <span className="text-amber-500 text-xl">✦</span>
-//                     </div>
-//                     <p className="text-gray-400 text-sm leading-relaxed mb-6">{item.desc[lang]}</p>
-//                   </div>
-//                 </div>
-//               ))} */}
-//             </motion.div>
-//           </AnimatePresence>
-//         </div>
-//       </div>
-
-//       {/* Enquiry Modal */}
-//       <AnimatePresence>
-//         {isEnquiryOpen && selectedItem && (
-//           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={() => setIsEnquiryOpen(false)}>
-//             <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ scale: 0.9 }} transition={{ type: "spring" }} onClick={(e) => e.stopPropagation()} className="bg-[#111] text-white rounded-2xl p-8 w-[90%] max-w-md border border-white/10 relative">
-//               <div className="flex justify-between items-center mb-6">
-//                 <h2 className="text-2xl font-serif text-amber-400">{uiText[lang].enquiryTitle}</h2>
-//                 <button onClick={() => setIsEnquiryOpen(false)} className="text-white/50 hover:text-white text-xl">✕</button>
-//               </div>
-//               <div className="mb-6">
-//                 <img src={selectedItem.image} alt={selectedItem.name[lang]} className="w-full h-40 object-cover rounded-xl mb-4" />
-//                 <h3 className="text-lg font-bold">{selectedItem.name[lang]}</h3>
-//                 <p className="text-sm text-gray-400 mt-1">{selectedItem.desc[lang]}</p>
-//               </div>
-//               <div className="flex justify-end gap-4">
-//                 <button onClick={() => setIsEnquiryOpen(false)} className="px-5 py-2 text-sm uppercase text-gray-400">{uiText[lang].cancel}</button>
-//                 <button className="px-6 py-2 bg-amber-500 text-black text-sm font-bold uppercase rounded-full transition">{uiText[lang].proceed}</button>
-//               </div>
-//             </motion.div>
-//           </motion.div>
-//         )}
-//       </AnimatePresence>
-//       <Footer />
-//     </>
-//   );
-// };
 
 
 
