@@ -32,17 +32,17 @@ const categories = [
   },
   {
     id: 6,
-    name: "cutlet",
+    name: "Cutlet",
     image: "https://tse1.mm.bing.net/th/id/OIP.sA6P9T6O3bNUAg9DY4XVzAHaE7?pid=Api&P=0&h=180" // Curry
   },
   {
     id: 7,
-    name: "vada",
+    name: "Vada",
     image: "https://tse2.mm.bing.net/th/id/OIP.FdU-BqsXXz1a4ZUx0Xq1OAHaE6?pid=Api&P=0&h=180" // Steak
   },
   {
     id: 8,
-    name: "kesari",
+    name: "Kesari",
     image: "https://www.tastingtable.com/img/gallery/kesari-is-the-indian-dessert-that-shines-bright-from-saffron-upgrade/l-intro-1701376057.jpg" // Dessert
   }
 ];

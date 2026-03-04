@@ -59,7 +59,7 @@ Event: ${formData.eventType}
 Message: ${formData.message}`;
 
   window.open(
-    `https://wa.me/919514001155?text=${encodeURIComponent(text)}`,
+    `https://wa.me/9514001177?text=${encodeURIComponent(text)}`,
     "_blank"
   );
 };
@@ -176,8 +176,10 @@ text-sm text-gray-900 placeholder-gray-400
 focus:outline-none focus:border-amber-500"
 >
   <option value="">Select...</option>
-  <option value="50 - 100">50 - 100</option>
-  <option value="100+">100+</option>
+    <option value="50 - 100">50 – 100</option>
+  <option value="100 - 500">100 – 500</option>
+  <option value="500 - 1000">500 – 1000</option>
+  <option value="1000+">1000+</option>
 </select>
 
                         <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400 text-[10px]">▼</div>

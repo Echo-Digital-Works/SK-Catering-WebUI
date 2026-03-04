@@ -5,49 +5,49 @@ import { motion, AnimatePresence } from 'framer-motion';
 const reviews = [
   {
     id: 1,
-    name: "Sandra Blake",
+    name: "R. Karthikeyan",
     role: "CEO, Digital Agency",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
+    image: "https://cassette.sphdigital.com.sg/image/straitstimes/3705e7d5ca7e6aa3dce1ebbefc2e6692edb9f6b278d9115b4da9fded679cff07",
     text: "The presentation was absolute perfection. SK Caterings created an atmosphere, not just a meal.",
     category: "Corporate"
   },
   {
     id: 2,
-    name: "Robert Fox",
+    name: "S. Priyadharshini",
     role: "Event Planner",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+    image: "https://static.toiimg.com/thumb/msid-92701103,width-800,height-600,resizemode-75,imgsize-45862,pt-32,y_pad-40/92701103.jpg",
     text: "The live pasta station was a showstopper. Professionalism unmatched.",
     category: "Events"
   },
   {
     id: 3,
-    name: "Kathryn Murphy",
+    name: "M. Vignesh",
     role: "Bride",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+    image: "https://vignesh27-97.github.io/assets/img/profile-img.jpg",
     text: "They made my wedding day magical. Traditional roots with a modern twist.",
     category: "Wedding"
   },
   {
     id: 4,
-    name: "Paula Reynolds",
+    name: "K. Haripriya",
     role: "Hotel Manager",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+    image: "https://1.bp.blogspot.com/-ENTb0Nzue5k/VVL_C7KZXzI/AAAAAAAADRU/SW1LGwNLG-0/s1600/Hari_Priya_23_Super_CooL_Looks_in_Red_Saree_and_Blue_Blouse_5.jpg",
     text: "Impeccable hygiene and taste. They handled our destination logistics flawlessly.",
     category: "Logistics"
   },
   {
     id: 5,
-    name: "Sophia Anderson",
+    name: "T. Dineshkumar",
     role: "Product Designer",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+    image: "https://www.iimb.ac.in/sites/default/files/2025-01/dinesh-kumar.jpg",
     text: "A culinary masterpiece. The desserts were not just food, they were art.",
     category: "Artistry"
   },
   {
     id: 6,
-    name: "Olivia Miller",
+    name: "P. Divya",
     role: "Jewelry Owner",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&q=80",
+    image: "https://images.indianexpress.com/2021/03/Divya-Gokulnath_Byjus_759.jpg",
     text: "We hired them for a private dinner. The food was simply divine. 10/10.",
     category: "Private"
   }
